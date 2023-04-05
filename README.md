@@ -6,5 +6,5 @@ This is the code of my [CDN/media delivery server](https:/cdn.manpreet.tk)
 
 1. download the files and open terminal where `package.json` file is located
 2. rename `example_public` folder to `public`
-3. type `npm init` and press enter
+3. type `npm i` and press enter
 4. run `start.bat` file
