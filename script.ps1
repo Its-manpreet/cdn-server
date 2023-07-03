@@ -39,9 +39,6 @@ function remove-File($fileName) {
         $url = $serverUrl + "/delete/$fileName"
         Invoke-RestMethod -Uri $url -Method DELETE
         Write-Host "File deleted successfully: $fileName"
-        # $uploadedFilenames = Get-Content $uploadedFile
-        # $uploadedFilenames = $uploadedFilenames | Where-Object { $_ -ne $fileName }
-        # $uploadedFilenames | Out-File $uploadedFile -Encoding utf8 -Force
     } catch {
         Write-Host "Failed to delete file: $fileName"
     }
@@ -54,7 +51,7 @@ while ($true) {
     $files = Get-ChildItem -Path $watchFolder -Filter "*.*" -File
 
     foreach ($filename in $uploadedFilenames){
-        if (-not (Test-Path -path .\cdn\$filename)){
+        if (-not (Test-Path -path $watchFolder\$filename)){
             Remove-File $filename
             $uploadedFilenames = $uploadedFilenames | Where-Object { $_ -ne $filename }
             $uploadedFilenames | Out-File $uploadedFile -Encoding utf8
