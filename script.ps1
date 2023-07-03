@@ -26,6 +26,7 @@ function send-File($filePath) {
             Write-Host "URL copied to clipboard: $fileUrl"
             Set-Clipboard -Value $fileUrl
             $fileName | Out-File $uploadedFile -Encoding utf8 -Append
+            Start-Sleep -Seconds 60
         }
     } catch {
         Write-Host "Failed to upload file: $($_.Exception.Message)"
@@ -49,7 +50,7 @@ Write-Host "Watching folder: $watchFolder"
 while ($true) {
     $uploadedFilenames = Get-Content $uploadedFile
     $files = Get-ChildItem -Path $watchFolder -Filter "*.*" -File
-
+    Start-Sleep -Seconds 5
     foreach ($filename in $uploadedFilenames){
         if (-not (Test-Path -path $watchFolder\$filename)){
             Remove-File $filename
