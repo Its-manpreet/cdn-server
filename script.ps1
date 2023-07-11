@@ -5,7 +5,7 @@ Import-Module -Name Microsoft.PowerShell.Management
 $watchFolder = "D:\manpreet\codes\http\cdn"
 
 # Specify the server URL
-$serverUrl = "http://cdn.manpreet.tk:32081"
+$serverUrl = "http://cdn.manpreet.tk:32630"
 # $serverUrl = "http://localhost:3000"
 
 # Specify the filename to store uploaded filenames
