@@ -2,7 +2,7 @@
 Import-Module -Name Microsoft.PowerShell.Management
 
 # Specify the folder to watch
-$watchFolder = "D:\manpreet\codes\http\cdn"
+$watchFolder = "./cdn"
 
 # Specify the server URL
 $serverUrl = "http://cdn.manpreet.tk:32630"
